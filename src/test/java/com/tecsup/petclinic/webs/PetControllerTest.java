@@ -111,7 +111,6 @@ public class PetControllerTest {
 
 	}
 
-
 	/**
      * 
      * @throws Exception
@@ -130,7 +129,6 @@ public class PetControllerTest {
                 .ownerId(OWNER_ID)
                 .birthDate(BIRTH_DATE)
                 .build();
-
 
 		ResultActions mvcActions = mockMvc.perform(post("/pets")
 						.content(om.writeValueAsString(newPetTO))
