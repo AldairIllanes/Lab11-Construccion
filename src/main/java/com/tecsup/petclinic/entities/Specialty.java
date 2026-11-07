@@ -8,11 +8,6 @@ import lombok.ToString;
 
 import java.util.Set;
 
-/**
- * 
- * @author jgomezm
- *
- */
 @NoArgsConstructor
 @Entity(name = "specialties")
 @Data
@@ -25,8 +20,17 @@ public class Specialty {
 	@Column(name = "name")
 	private String name;
 
+	@Column(name = "office")
+	private String office;
+
+	@Column(name = "h_open")
+	private Integer openHour;
+
+	@Column(name = "h_close")
+	private Integer closeHour;
+
 	@ManyToMany(mappedBy = "specialties", fetch = FetchType.LAZY)
 	@ToString.Exclude
-	//@EqualsAndHashCode.Exclude
+	@EqualsAndHashCode.Exclude
 	private Set<Vet> vets;
 }
